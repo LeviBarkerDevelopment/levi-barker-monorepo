@@ -68,3 +68,5 @@ frontend/root-config/dist
 frontend/root-config/node_modules
 backend/nestjs-firebase-functions/dist
 backend/nestjs-firebase-functions/node_modules
+frontend/react-starter/node_modules
+frontend/project-gallery/node_modules
