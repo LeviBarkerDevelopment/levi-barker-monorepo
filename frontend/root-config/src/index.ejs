@@ -34,7 +34,9 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js"
       }
     }
   </script>
@@ -48,19 +50,13 @@
     {
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-        "@levibarker/root-config": "//localhost:9000/levibarker-root-config.js"
+        "@levibarker/root-config": "//localhost:9000/levibarker-root-config.js",
+        "@levibarker/react-starter": "//localhost:8900/levibarker-react-starter.js"
       }
     }
   </script>
   <% } else { %>
-    <script type="systemjs-importmap">
-      {
-        "imports": {
-          "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-          "@levibarker/root-config": "https://firebasestorage.googleapis.com/v0/b/mono-container-project.appspot.com/o/microfrontend-modules%2Flevibarker-root-config.js"
-        }
-      }
-    </script>
+    <script type="systemjs-importmap" src="https://firebasestorage.googleapis.com/v0/b/mono-container-project.appspot.com/o/microfrontend-modules%2Fimportmap.json?alt=media"></script>
   <% } %>
 
   <!--

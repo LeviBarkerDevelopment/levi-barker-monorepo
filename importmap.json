@@ -1,0 +1,8 @@
+{
+    "imports": {
+        "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
+        "@levibarker/root-config": "https://firebasestorage.googleapis.com/v0/b/mono-container-project.appspot.com/o/microfrontend-modules%2Flevibarker-root-config.js?alt=media",
+        "@levibarker/react-starter": "https://firebasestorage.googleapis.com/v0/b/mono-container-project.appspot.com/o/microfrontend-modules%2Flevibarker-react-starter.js?alt=media",
+        "@levibarker/project-gallery": "https://firebasestorage.googleapis.com/v0/b/mono-container-project.appspot.com/o/microfrontend-modules%2Flevibarker-project-gallery.js?alt=media"
+    }
+}
