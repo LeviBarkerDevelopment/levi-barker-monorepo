@@ -70,3 +70,5 @@ backend/nestjs-firebase-functions/dist
 backend/nestjs-firebase-functions/node_modules
 frontend/react-starter/node_modules
 frontend/project-gallery/node_modules
+backend/nestjs-firebase-functions/assets/firebase.json
+backend/nestjs-firebase-functions/assets/cert.json

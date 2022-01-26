@@ -1,24 +1,48 @@
-import { Card, CardActions, Typography, CardContent, CardMedia, Button } from "@mui/material";
+import { useState, useEffect } from "react";
+import { Card, CardActions, Typography, CardContent, CardMedia, Button, Skeleton } from "@mui/material";
 import { Link as LinkIcon } from "@mui/icons-material";
 
 
-export function ProjectCard(): JSX.Element {
+export function ProjectCard({ project }: any): JSX.Element {
+
+    const handleLinkClick = (link: string) => {
+        window.open(link, '_blank');
+    }
+
     return (
         <Card>
-            <CardMedia
-                component="img"
-                height="140"
-                src="https://www.gstatic.com/devrel-devsite/prod/vd66275adb6a18222c17fbda979bde6b3bf2a675531cc7e54b05dbb69d107b056/cloud/images/cloud-logo.svg" />
+            <div style={{
+                height: "140px",
+                width: "100%",
+                backgroundColor: "#bbb",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundImage: `url(${project?.imageUrl})`
+            }}>
+
+            </div>
+
             <CardContent>
-                <Typography variant="caption">
-                    Some description of the projects
-                </Typography>
+                {project?.title ?
+                    <>
+                        <Typography variant="h6" component="h2">
+                            {project.title}
+                        </Typography>
+                        <Typography variant="caption">
+                            {project.description}
+                        </Typography>
+                    </> : <>
+                        <Skeleton width="75%" height={16} variant="rectangular" sx={{
+                            marginBottom: "8px"
+                        }} />
+                        <Skeleton width="100%" height={10} variant="rectangular" />
+                    </>}
             </CardContent>
             <CardActions sx={{
                 display: 'flex',
                 justifyContent: 'flex-end'
             }}>
-                <Button startIcon={<LinkIcon />}>
+                <Button disabled={!project} startIcon={<LinkIcon />} onClick={() => handleLinkClick(project?.link)}>
                     Link
                 </Button>
             </CardActions>

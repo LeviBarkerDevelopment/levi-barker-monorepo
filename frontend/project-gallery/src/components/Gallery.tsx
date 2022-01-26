@@ -1,17 +1,18 @@
 import { Grid, Card, CardActions, Grow, CardContent, CardMedia, Button} from "@mui/material";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllProjects } from "../redux/projectSlice";
+import { RootState } from "../redux/store";
 import { ProjectCard } from "./ProjectCard";
 
 export function Gallery(): JSX.Element {
 
-    const projects: any[]  = [
-        {id: 1},
-        {id: 2},
-        {id: 3},
-        {id: 4},
-        {id: 5},
-        {id: 6},
-        {id: 7}
-    ];
+    const projects = useSelector((state: RootState) => state.project.value);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchAllProjects())
+    }, []);
 
     return (
         <Grid container spacing={2}>
@@ -23,8 +24,8 @@ export function Gallery(): JSX.Element {
                 {...(true ? { timeout: 400 *  index} : {})}
               >
                 <Grid item 
-                    xs={12} sm={6} md={4} lg={3} xl={2}>
-                    <ProjectCard />
+                    xs={12} sm={6} md={4}>
+                    <ProjectCard project={project}/>
                 </Grid>
               </Grow>
             ))}
