@@ -1,2 +1,2 @@
-# mono-container-project
-A monorepo containing multiple microfrontends and microservices to be used from a central dashboard.
+# Various Project Monorepo
+A monorepo containing multiple standalone frontends, microfrontends and microservices.
